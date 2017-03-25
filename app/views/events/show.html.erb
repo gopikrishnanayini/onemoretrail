@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p>
+<strong>Name</strong>
+<%= @event.name %>
+</p>
+<p>
+<strong>Organiser</strong>
+<%= @event.organiser %>
+</p>
+
+<%= link_to 'Edit', edit_student_event_path(@student,@event) %>
+<%= link_to 'Back', student_events_path(@student) %>

@@ -1,0 +1,22 @@
+<h1>Listing Students</h1>
+</style>
+<table style="width:100%">
+<tr>
+<th>Name</th>
+<th>Branch</th>
+</tr>
+<% @students.each do |student| %>
+	 <tr>
+	 <td><%= student.name %></td>
+	 <td><%= student.branch %></td>
+	 <td><%= student.dob %></td>
+	 <td><%= link_to 'show', student_path(student) %></td>
+	 <td><%= link_to 'edit', edit_student_path(student) %></td>
+	 <td><%= link_to 'destroy', student_path(student),
+	         method: :delete, data: { clear: 'Are you sure?'} %></td>
+	<td><%= link_to 'events', new_student_event_path(student) %></td>
+	 </tr>
+	 <% end %>
+</table>
+
+<%= link_to 'New student', new_student_path %>

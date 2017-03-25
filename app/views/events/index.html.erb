@@ -1,0 +1,29 @@
+<h1>Listing Events</h1>
+ <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    body {background-color: black;
+}
+</style>
+<table style="width:100%">
+<tr>
+<th>Name</th>
+<th>Organiser</th>
+</tr>
+<% @events.each do |event| %>
+	<tr>
+	<td><%= event.name %></td>
+	<td><%= event.organiser %></td>
+	<td><%= link_to 'show', student_event_path(@student, event) %></td>
+	<td><%= link_to 'edit', edit_student_event_path(@student, event) %></td>
+	<td><%= link_to 'destroy', student_event_path(@student, event),
+	        method: :delete, data: { clear: 'Are you sure?' }%></td>
+	 <td><%= link_to 'student', student_path(@student) %></td>
+
+	</tr>
+ <% end %>
+</table>
+
+<%= link_to 'New Event', new_student_event_path(@student) %>
+

@@ -1,0 +1,27 @@
+<%= form_for @student do |f| %>
+  <% if @student.errors.any? %>
+  <div id='error explanation'>
+    <h2><%= pluralize(@student.errors.count)%>Prohibited student from being saved:</h2>
+  <ul>
+  <% @student.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+   <% end %>
+   </ul>
+   </div>
+   <% end %>
+<p>
+<%= f.label :name %>
+<%= f.text_field :name %>
+</p>
+<p>
+<%= f.label :branch %>
+<%= f.text_field :branch %>
+</p>
+<p>
+<%= f.label :dob %>
+<%= f.text_field :dob %>
+</p>
+<p>
+<%= f.submit :clickme %>
+</p>
+<% end %>
